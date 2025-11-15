@@ -1,10 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import MovieCard from "./components/MovieCard.jsx"
 
 function App() {
+
+
   return (
-    <div>
-    </div>
+    <>
+    <MovieCard movie={{title:"Tim's Film",release_date:"2027"}}/>
+     <MovieCard movie={{title:"Mandar's Film",release_date:"2089"}}/>
+    </>
   );
 }
 
