@@ -26,7 +26,7 @@ const [searchQuery, setSearchQuery]=useState("");
        </form>
         </div>
         <div className="moves-grid">
-            {movies.map((movie)=>movie.title.toLowerCase().startsWith(searchQuery) && (<MovieCard movie={movie} key={movie.id}/>))}
+            {movies.map((movie)=>(movie.title.toLowerCase().startsWith(searchQuery)&& (+movie.release_date>2022)) && <MovieCard movie={movie} key={movie.id}/>)}
         </div>
     </div>
 }
