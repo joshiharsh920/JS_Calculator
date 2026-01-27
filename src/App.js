@@ -1,6 +1,8 @@
 import './css/App.css';
 import Favorites from './Pages/Favorites';
-import Home from "./Pages/Home"
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import MyAccount from './Pages/MyAccount';
 import { Routes, Route} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import { useState } from 'react';
@@ -14,6 +16,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home favorites={favorites} setFavorites={setFavorites}/>}></Route>
       <Route path="/favorites" element={<Favorites favorites={favorites}/>} ></Route>
+      <Route path="/account" element={<MyAccount/>} ></Route>
+      <Route path="/login" element={<Login/>} ></Route>
     </Routes>
    </main>
    </div>
