@@ -1,15 +1,20 @@
 import "../css/MovieCard.css"
-function MovieCard({movie}){
-
-    function onFavoriteClick(oEvent){
-        alert("clicked");
+function MovieCard({movie,setFavorites}){
+ 
+    function onFavoriteClick(movieDetails){
+           setFavorites(prev => {
+    if (prev.some(m => m.id === movie.id)) {
+      return prev; // already favorited
+    }
+    return [...prev, movie];
+  });
     }
         
 return <div className="movie-card">
 <div className="movie-poster">
  <img src={movie.url} alt={movie.title}></img>
 <div className="movie-overlay">
-    <button className="favorite-btn" onClick={onFavoriteClick(movie)}>❤️</button>
+    <button className="favorite-btn" onClick={() => onFavoriteClick(movie)}>❤️</button>
 </div>
 </div>
 <div className="movie-info">

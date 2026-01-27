@@ -32,7 +32,7 @@ const sampleMovies = [
   }
 ];
 
-function Home() {
+function Home({ favorites, setFavorites }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
@@ -86,7 +86,7 @@ function Home() {
        </form>
         </div>
         <div className="movies-grid">
-            {movies.map((movie)=>(movie.title.toLowerCase().startsWith(searchQuery)) && <MovieCard movie={movie} key={movie.id}/>)}
+            {movies.map((movie)=>(movie.title.toLowerCase().startsWith(searchQuery)) && <MovieCard movie={movie} key={movie.id} setFavorites={setFavorites}/>)}
         </div>
     </div>
 }
