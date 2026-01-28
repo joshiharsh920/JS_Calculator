@@ -22,6 +22,20 @@ function Login() {
     } else {
       setError("Invalid email or password");
     }
+    //Setting user for further use.
+     if (email === "user@example.com" && password === "password123") {
+      // ✅ THIS is where user is set
+      setUser({
+        email: email,
+        favorites: [],
+        rentedMovies: []
+      });
+
+      // Redirect to My Account
+      navigate("/account");
+    } else {
+      setError("Invalid email or password");
+    }
   };
 
   if (isLoggedIn) {
